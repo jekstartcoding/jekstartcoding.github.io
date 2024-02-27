@@ -10,47 +10,69 @@
 
 </head>
 
-<body>
-    <header>
-
-        <nav>
-            <div class="logo">
-                <h4>Rizqi Proyek 1</h4>
-            </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Subjects</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Assignment</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <input type="checkbox">
-                <span></span>
-                <span></span>
-                <span></span>   
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-    <main>
-        <div class="box flextwo">
-            <article>
-                <h2>Tentang Web</h2>
-                <p>Web Ini dibuat untuk memenuhi tugas Proyek 1. Beberapa sumber yang dipakai dalam pengerjaan tugas ini selain dari lms  adalah dari ... Terima Kasih</p>
-            </article>
+<body id="web-body">
+    <nav id="navbar-container">
+        <div id="navbar-header-wrapper">
+            <img src="img\logo-header.png" alt="" id="header-logo" id="header-logo">
+            <h1 id="nav-name">Muhammad Zaky Aliyashfi</h1>
         </div>
-        <aside class="box flexone">
-            <img src="img/RIZQI.png" class="image"/>
-            <h5>Muhammad Rizqi Sholahuddin</h5>
-        </aside>
-    </main>
-    <footer class="box">
-        Rizqi, Di depan Laptop 27 Februari 2024
-    </footer>
-    </div>
-</div>
-    <script src="js/main.js"></script>
-</body>
+        <div id="navbar-item-wrapper">
+            <div class="navbar-item" id="home-button">
+                <a href="#home-page">
+                    <h2>Beranda</h2>
+                </a>
+            </div>
+            <div class="navbar-item" id="about-me">
+                <a href="#about-me-page">
+                    <h2>Tentang Saya</h2>
+                </a>
+            </div>
+            <div class="navbar-item" id="skills">
+                <a href="#skills-page">
+                    <h2>Kemampuan</h2>
+                </a>
+            </div>
+            <div class="navbar-item" id="portfolio">
+                <a href="#portfolio-page">
+                    <h2>Portfolio</h2>
+                </a>
+            </div>
+        </div>
+    </nav>
 
+    <main id="main-content">
+        <div id="home-page" class="content-item">
+            <div id="my-pic" class="home-page-item">
+                <img src="img\foto-profile.png" alt="" id="profile-pic">
+            </div>
+            <div id="my-desc" class="home-page-item">
+                <h1 id="desc-title" class="desc-item"><span id="desc-hi">Hi!</span><br>
+                    Saya Muhammad Zaky Aliyashfi
+                </h1>
+                <h2 id="desc-content" class="desc-item">
+                    Tahun Pertama di Teknik Informatika | Pemula Web Development | <br>
+                    Pengalaman 6 Bulan Belajar Bahasa Pemrograman C | Pemula Phyton | <br>
+                    HTML, CSS and JavaScript Beginner.
+                </h2>
+                <div id="contact-container" class="desc-item">
+                    <a href="https://discord.com/invite/dbc9Z7dm" target="_blank">
+                        <img src="img\discord-logo.png" alt="discord-logo" class="contact-pic" title="my discord">
+                    </a>
+                    <a href="https://www.instagram.com/alyshfzky?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                        <img src="img\instagram-logo.png" alt="Instagram icon" class="contact-pic" title="my instagram">
+                    </a>
+                    <a href="https://github.com/jekstartcoding" target="_blank">
+                        <img src="https://static-00.iconduck.com/assets.00/github-icon-2048x1988-jzvzcf2t.png" alt="github icon" class="contact-pic" title="my github">
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="js\main.js">
+
+    </script>
+    </body>
 </html>
