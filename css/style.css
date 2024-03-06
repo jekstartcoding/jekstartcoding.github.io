@@ -29,6 +29,7 @@ body::-webkit-scrollbar {
 
 #navbar-header-wrapper{
   display: flex;
+  width: 40%;
   justify-content: space-evenly;
   align-items: center;
   margin-left: 30px;
@@ -40,10 +41,9 @@ body::-webkit-scrollbar {
 }
 
 #header-logo{
-  width: 70px;
-  height: 70px;
+  width: 4rem;
+  height: auto;
   filter: brightness(1000%);
-  margin-right: 20px;
 }
 
 #header-logo:hover{
@@ -55,25 +55,24 @@ body::-webkit-scrollbar {
 #navbar-item-wrapper{
   display: flex;
   justify-content: space-evenly;
+  width: 50%;
+  align-items: center;
   margin-right: 30px;
 }
 
 .navbar-item{
   height: 40px;
-  width: 120px;
+  width: 100%;
   font-size: 12px;
   border-radius: 20px;
   color: white;
   background-color: #a97b4c;
   margin: 0 10px 0;
+  padding: 5px 0 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 7px 10px 7px;
-}
-
-.navbar-item:nth-child(2){
-  width: 120px;
+  transition: all 0.7s;
 }
 
 .navbar-item:hover{
@@ -87,9 +86,65 @@ body::-webkit-scrollbar {
   color: white;
 }
 
+#hamburger-menu{
+  display: none;
+  flex-direction: column;
+  height: 30px;
+  justify-content: space-between;
+  position: relative;
+  margin-right: 5%;
+}
+
+#hamburger-menu:hover{
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+#hamburger-menu input{
+  position: absolute;
+  top: -5px;
+  left: -3px;
+  width: 21px;
+  height: 21px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#hamburger-menu > span{
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.7s;
+}
+
+#hamburger-menu span:nth-child(2) {
+  transform-origin: left center;
+}
+
+#hamburger-menu span:nth-child(4) {
+  transform-origin: left center;
+}
+
+#hamburger-menu input:checked~span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+#hamburger-menu input:checked~span:nth-child(4) {
+  transform: rotate(-45deg);
+}
+
+/* invis span ke 2 / child ke 3 */
+#hamburger-menu input:checked~span:nth-child(3) {
+  width: 0%;
+  opacity: 0;
+  transition: .1s
+}
+
 #main-content{
   width: 100%;
-  height: 4000px;
 }
 
 .content-item{
@@ -109,7 +164,7 @@ body::-webkit-scrollbar {
 }
 
 .home-page-item{
-  width: 800px;
+  width: 35%;
   margin: 50px 2% 0;
 }
 
@@ -139,8 +194,10 @@ body::-webkit-scrollbar {
 }
 
 #profile-pic{
-  height: 1100px;
-  width: 600px;
+  margin-top: -10%;
+  width: 80%;
+  max-width: 500px;
+  height: auto;
 }
 
 #profile-pic:hover{
@@ -149,17 +206,25 @@ body::-webkit-scrollbar {
   transition: all 0.3s ease-in-out;
 }
 
+#my-desc{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
 .desc-item{
-  margin: 0px 80px 10px;
+  margin: 0px 10% 0px;
   color: white;
 }
 
 .desc-item:first-child{
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 #desc-title{
   font-size: 40px;
+  margin-bottom: 10px;
 }
 
 #desc-hi{
@@ -191,7 +256,8 @@ body::-webkit-scrollbar {
 }
 
 #about-me-page{
-  margin-top: -50px;
+  margin-top: -50px;  
+  padding-bottom: 10%;
   width: 100%;
   height: 2800px;
   display: flex;
@@ -215,7 +281,7 @@ body::-webkit-scrollbar {
 }
 
 #ab-content-wrapper{
-  height: 360px;
+  height: 24%;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -240,11 +306,10 @@ body::-webkit-scrollbar {
 }
 
 .DAM{                    /*DAM = Dream and Motto*/
-  margin-top: 20px;
   font-size: large;
   color: white;
-  width: 800px;
-  height: 300px;
+  width: 40%;
+  height: 90%;
   padding: 20px;
   text-align: center;
   line-height: 40px;
@@ -281,7 +346,7 @@ body::-webkit-scrollbar {
 
 .hobi-n-text{
   height: 400px;
-  width: 400px;
+  width: 40%;
   margin: 0 100px 0;
   display: flex;
   flex-direction: column;
@@ -290,8 +355,9 @@ body::-webkit-scrollbar {
 }
 
 .hobi-img{
-  width: 300px;
-  height: 300px;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
   border-radius: 50px;
   filter: drop-shadow(5px 5px 10px white);
 }
@@ -306,8 +372,8 @@ body::-webkit-scrollbar {
   margin-top: 20px;
   font-size: 25px;
   color: white;
-  width: 800px;
-  height: 500px;
+  width: 200%;
+  height: 100%;
   padding: 20px;
   text-align: center;
   line-height: 40px;
@@ -322,6 +388,8 @@ body::-webkit-scrollbar {
 }
 
 .iframe{
+  width: 100%;
+  height: 100%;
   border-radius: 30px;
   filter: drop-shadow(5px 5px 15px #a97b4c);
 }
@@ -329,10 +397,10 @@ body::-webkit-scrollbar {
 #lessonlearn-wrapper{
   color: white;
   font-size: 30px;
-  margin-top: 100px;
+  margin-top: 10%;
   padding: 30px;
   width: 90%;
-  height: 400px;
+  height: 23%;
   text-align: center;
   line-height: 40px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -346,7 +414,7 @@ body::-webkit-scrollbar {
 
 #skills-page{
   width: 100%;
-  height: 800px;
+  height: 15%;
   display: flex;
   flex-direction: column;
   background: linear-gradient(to bottom, #231709, #000000);
@@ -364,11 +432,31 @@ body::-webkit-scrollbar {
   flex-direction: column;
 }
 
+.skills-img{
+  height: 200px;
+  margin-top: 100px;
+}
+
+.skills-img:first-child{
+  margin-top: 10px;
+}
+
+.skills-img:nth-child(2){
+  height: 210px;
+  margin-top: 10px;
+}
+
+.skills-img:nth-child(3){
+  height: 2500px;
+  margin: -20px;
+  margin-top: 0px;
+}
+
 .skills-img:hover{
   cursor: pointer;
 }
 
-.skills-img {
+.skills-img{
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -388,6 +476,10 @@ body::-webkit-scrollbar {
   align-items: center;
 }
 
+.skills-pic-row-2{
+  margin: 0 40% 0;
+}
+
 .pic-n-text{
   display: flex;
   flex-direction: column;
@@ -396,6 +488,8 @@ body::-webkit-scrollbar {
 
 .pic-text{
   color: white;
+  text-align: center;
+  width: 120%;
 }
 
 #portfolio-page{
@@ -442,7 +536,7 @@ body::-webkit-scrollbar {
 
 #portfolio-desc-wrapper{
   margin-top: 30px;
-  width: 800px;
+  width: 57%;
   color: white;
   text-align: center;
   border-radius: 10px;
@@ -460,7 +554,7 @@ body::-webkit-scrollbar {
 
 #portfolio-slideshow{
   height: 675px;
-  width: 1200px;
+  width: 100%;
   box-shadow: 0 0 10px white;
   border-radius: 30px;
 }
@@ -499,7 +593,7 @@ body::-webkit-scrollbar {
 
 #portfolio-fdesc-wrapper{
   margin-top: 30px;
-  width: 600px;
+  width: 60%;
   color: white;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
@@ -545,4 +639,77 @@ body::-webkit-scrollbar {
   display: flex;
   justify-content: end;
   align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Styles for mobile devices */
+  /* #navbar-item-wrapper{
+    display: none;
+  } */
+
+  #hamburger-menu{
+    display: flex;
+  }
+
+  #nav-name{
+    font-size: large;
+  }
+
+  #about-me-content{
+    font-size: medium;
+  }
+
+  /* #my-desc .desc-item{
+    font-size: small!important;
+  }
+
+  #desc-hi{
+    font-size: xx-large;
+  } */
+
+  #navbar-item-wrapper {
+    position: absolute;
+    display: flex;
+    right: 0;
+    top: 0;
+    height: 2000px;
+    width: 42%;
+    align-items: center;
+    justify-content: start;
+    margin-top: 100px;
+    margin-right: 0;
+    flex-direction: column;
+    background-color: #4d2e07;
+    z-index: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  #navbar-item-wrapper > .navbar-item{
+    margin-bottom: 4px;
+    border-radius: 2px;
+    border: 1px solid #4d2e07;
+  }
+
+  #navbar-item-wrapper > .navbar-item:hover{
+    filter: brightness(70%);
+  }
+
+  #navbar-item-wrapper.menushow {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  #main-content{
+    transition: all 0.3s;
+  }
+
+  #main-content.darkenMain{
+    filter: brightness(60%);
+  }
+
+  .skills-img{
+    height: 130px !important;
+  }
 }

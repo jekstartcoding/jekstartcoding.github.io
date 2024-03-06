@@ -1,3 +1,13 @@
+const mntoggle = document.querySelector('#hamburger-menu input');
+const nav = document.querySelector('#navbar-item-wrapper');
+const main = document.querySelector('#main-content');
+
+mntoggle.addEventListener('click',function(){
+    nav.classList.toggle('menushow');
+    main.classList.toggle('darkenMain');
+    mntoggle.classList.toggle('checked');
+})
+
 var featureType = 1;
 //start function slideshow
 function slideshow(x){
