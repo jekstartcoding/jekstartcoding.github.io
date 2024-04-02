@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Zaky's Project</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- stylesheet untuk data tables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Srisakdi&display=swap" rel="stylesheet">
     <link rel="icon" href="img\logo-header-icon.png">
-
 </head>
 
 <body id="web-body">
@@ -36,6 +37,11 @@
             <div class="navbar-item" id="portfolio">
                 <a href="#portfolio-page">
                     <h2>Portfolio</h2>
+                </a>
+            </div>
+            <div class="navbar-item" id="web-scrapping">
+                <a href="#web-scrapping-page">
+                    <h2>Web Scrapping</h2>
                 </a>
             </div>
         </div>
@@ -195,7 +201,7 @@
                         <div class="pic-n-text skills-pic-row-2" style="margin-left: -300px;">
                             <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank"></a>
                             <img class="skills-img" src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png" alt="">
-                            <h2 class="pic-text">Phyton</h2>
+                            <h2 class="pic-text">Python</h2>
                         </div>
                     </div>
                 </div>
@@ -248,13 +254,36 @@
             </div>
         </div>
 
+        <div id="web-scrapping-page" class="content-item">
+            <div id="web-scrapping-title-wrapper">
+                <h1 id="web-scrapping-title" class="page-title">Web Scrapping</h1>
+            </div>
+            <div>
+                <p style="margin-bottom: 2vw;">
+                    Table dibawah ini merupakan hasil dari web scrapping yang saya lakukan pada website 
+                    <a href="https://www.republika.co.id/" target="_blank" style="color: white;font-weight: bold;">Republika.co.id</a>
+                </p>
+            </div>
+            <table id="web-scrapping-table">
+                <thead>
+                  <th>No</th>
+                  <th>Judul</th>
+                  <th>Kategori</th>
+                  <th>Waktu Publish</th>
+                  <th>Waktu Pengambilan Data</th>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+        </div>
+
         <div id="footer">
             <h2>Copyright© Muhammad Zaky Aliyashfi all rights reserved</h2>
         </div>
     </main>
-
-    <script src="js\main.js">
-
-    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+    <script src="js\main.js"></script>
     </body>
 </html>

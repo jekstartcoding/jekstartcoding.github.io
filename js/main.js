@@ -84,3 +84,49 @@ function slideshow(x){
     }
 }
 //end function slideshow
+
+
+//Mengambil tabel web-scrapping-table untuk dijadikan sebagai DataTable dengan library DataTable
+var table = $('#web-scrapping-table').DataTable({
+    columnDefs: [
+        { targets: [3], orderable: false }
+    ],
+    order:[]
+});
+
+//start function web scrapping table
+function webScrap(){
+
+    //Mengambil data dari file data_web.json
+    fetch('data_web.json')
+        //Mengubah data yang diambil dari fetch menjadi format JSON (Javascript Object Notation)
+        .then(response => response.json())
+        //Setelah JSON didapat dengan formatnya (hasil konversi), kemudian parameter data ini merepresentasikan data yang sudah diubah formatnya
+        .then(data => {
+            //Mengambil data satu per satu dari data yang sudah diubah formatnya
+            data.forEach((obj, index) => {
+                //Menambahkan data ke dalam tabel yang sudah dibuat sebelumnya dengan data satu per satu dari hasil fetch dan konversi tadi
+                var row = table.row.add([
+                    index + 1,
+                    obj.judul,
+                    obj.kategori,
+                    obj.waktu_publish,
+                    obj.waktu_scrapping
+                ]).
+                //Menggambar tabel yang sudah ditambahkan datanya
+                draw();
+            });
+        })
+        //Menangkap error jika terjadi error
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+//end function web scrapping table
+
+//Menjalankan fungsi webScrap() ketika DOM sudah selesai dimuat
+document.addEventListener('DOMContentLoaded', webScrap);
+
+$('#web-scrapping-table').on('draw.dt', function() {
+    $('#web-scrapping-table td').css('text-align', 'center');
+  });
