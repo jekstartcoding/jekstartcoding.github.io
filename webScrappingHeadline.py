@@ -22,6 +22,10 @@ data = soup.find('ul', attrs = {'class':'wrap-latest'})
 #list yang akan dijadikan tempat untuk menyimpan data yang sudah diambil
 information = []
 
+#memperoleh data dari file yang sudah diambil sebelumnya untuk membandingkan data yang sudah ada dengan data yang akan diambil
+with open("data_web.json", "r") as f:
+    prevData = json.load(f)
+
 #melakukan iterasi untuk mendapatkan data yang akan diambil, dalam hal ini data yang akan diambil adalah data yang berada di dalam tag li dengan class conten1
 for info in data.findAll('li', attrs={'class': 'conten1'}):
     #membuat dictionary untuk menyimpan data yang sudah diambil
@@ -29,6 +33,15 @@ for info in data.findAll('li', attrs={'class': 'conten1'}):
 
     #mengambil data dari tag h3 yang merupakan judul dari berita
     headline['judul'] = info.find('h3').text.strip().replace('"', '')
+
+    same = False
+    #jika judul yang diambil sudah ada di data yang sudah ada sebelumnya, maka akan dilanjutkan ke data selanjutnya
+    for i in prevData:
+        if headline['judul'] in i['judul']:
+            same = True
+            break
+    if same == True:
+        continue
 
     #membuat sebuah field dalam dictionary bernama category dengan nilai awal string kosong
     headline['kategori'] = ''
@@ -58,9 +71,12 @@ for info in data.findAll('li', attrs={'class': 'conten1'}):
     #menambahkan data yang sudah diambil ke dalam list information
     information.append(headline)
 
+#menambahkan data yang sudah diambil ke dalam data yang sudah ada sebelumnya
+prevData.extend(information)
+
 #nama file json yang nantinya akan disimpan data dari information kesana
 filename = 'data_web.json'
 
-#menyimpan data yang sudah diambil ke dalam file json
+#menyimpan data yang sudah diambil ke dalam file json (pada dasarnya ini adalah append karena menambah data yg sudah ada dengan data baru)
 with open(filename, "w") as f:
-    json.dump(information, f, indent=4)
+    json.dump(prevData, f, indent=4)
