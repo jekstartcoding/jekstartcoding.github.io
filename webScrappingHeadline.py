@@ -49,6 +49,8 @@ for info in data.findAll('li', attrs={'class': 'conten1'}):
     #jika data yang sudah dipecah lebih dari 2, maka field publish akan berisi data publish tadi dari indeks pertama hingga ke 4 terakhir (yang akan berisi .... menit/detik/jam yang lalu)
     if(len(publish) > 2):
         headline['waktu_publish'] = publish[-4] + ' ' + publish[-3] + ' ' + publish[-2] + ' ' + publish[-1]
+    if(len(publish) == 5):
+        headline['waktu_publish'] = publish[-3] + ' ' + publish[-2] + ' ' + publish[-1]
 
     #menambahkan data scrapping_time yang berisi kapan waktu scrapping dilakukan
     headline['waktu_scrapping'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
